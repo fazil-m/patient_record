@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:patient_record/user_details.dart';
+import 'package:patient_record/groups.dart';
+import 'package:patient_record/action_items.dart';
 
 void main() {
   runApp(MaterialApp(home: PatientHome()));
@@ -109,9 +111,8 @@ class _PatientHomeState extends State<PatientHome> {
                                   flex: 15,
                                   child: Column(
                                     children: [
-                                      Expanded(child: SizedBox()),
-                                      Expanded(
-                                        flex: 2,
+                                      SizedBox(height: 20),
+                                      Container(
                                         child: Row(
                                           children: [
                                             Stack(
@@ -121,18 +122,19 @@ class _PatientHomeState extends State<PatientHome> {
                                               ]
                                             ),
                                             SizedBox(width: 20.0),
-                                            Text('User - Bob Brandy', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0))
+                                            Text('User - Bob Brandy', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.0))
                                           ]
                                         )
                                       ),
-                                      Expanded(child: SizedBox()),
-                                      Expanded(
-                                        flex: 2,
-                                        child: Container(
+                                      SizedBox(height: 20.0),
+                                      Container(
+                                        height: 50.0,
+                                        child: Card(
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                           color: Color(0xffe9e9e9),
                                           child: Row(
                                             children: [
-                                              SizedBox(width: 10.0),
+                                              SizedBox(width: 20.0),
                                               FlatButton(onPressed: () {}, child: Text('Your Details')),
                                               SizedBox(width: 20.0),
                                               FlatButton(onPressed: () {}, child: Text('Notifications')),
@@ -144,11 +146,14 @@ class _PatientHomeState extends State<PatientHome> {
                                           )
                                         )
                                       ),
-                                      Expanded(child: SizedBox()),
-                                      Expanded(
-                                        flex: 5,
+                                      SizedBox(height:20),
+                                      Container(
                                         child: UserDetails()
-                                      )
+                                      ),
+                                      SizedBox(height:20),
+                                      Groups(),
+                                      SizedBox(height:20),
+                                      ActionItems()
                                     ]
                                   )
                                 ),
