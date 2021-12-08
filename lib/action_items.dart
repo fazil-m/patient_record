@@ -26,7 +26,76 @@ class ActionItems extends StatelessWidget {
                     ]
                   )
                 ]
-              )
+              ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  Container(
+                    height: 100,
+                    child: Card(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        color: Color(0xfff4f4f4),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(width: 30),
+                            Center(child: Icon(FontAwesomeIcons.solidCalendarAlt, size: 50)),
+                            SizedBox(width: 30),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text('Action Item 1',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
+                            ),
+                            SizedBox(width: 380),
+                            Container(
+                              height: 30,
+                              child: Card(
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+                                    child: Center(child: Text('15 Aug 2021',style: TextStyle(fontSize: 10)))
+                                  )
+                                ),
+                            ),
+                            SizedBox(width: 30)
+                          ]
+                        )
+                      ),
+                  ),
+                  SizedBox(width: 20.0),
+                  Container(
+                    height: 100,
+                    child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      color: Color(0xfff4f4f4),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(width: 30),
+                          Center(child: Icon(FontAwesomeIcons.solidCalendarAlt, size: 50)),
+                          SizedBox(width: 30),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('Action Item 2',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
+                          ),
+                          SizedBox(width: 380),
+                          Container(
+                            height: 30,
+                            child: Card(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                child: Container(
+                                  margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+                                  child: Center(child: Text('16 Aug 2021',style: TextStyle(fontSize: 10)))
+                                )
+                              ),
+                          ),
+                          SizedBox(width: 30)
+                        ]
+                      )
+                    ),
+                  )
+                ]
+              ),
+              SizedBox(height: 50)
             ]
           )
         ]

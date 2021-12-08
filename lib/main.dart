@@ -17,11 +17,71 @@ class _PatientHomeState extends State<PatientHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF233563),
-        title: Text("Connected Patient Hub",
-        style: TextStyle(fontSize: 30))
-      ),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(70.0), // here the desired height
+          child: AppBar(
+              backgroundColor: Color(0xFF233563),
+              actions: [
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  width: 300,
+                  height: 50,
+                  child: Card(
+                    color: Colors.white,
+                    child: Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 5),
+                          child: Icon(
+                            Icons.search_outlined,
+                            color: Colors.black,
+                            size: 20,
+                          ),
+                        ),
+                        Padding(
+                            padding: EdgeInsets.only(left: 5),
+                            child: Text(
+                              "Search for a User, Protocol Business Rule,Device",
+                              style: TextStyle(fontSize: 10),
+                            )),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 20, right: 50, top: 10),
+                  child: Center(
+                    child: FlatButton.icon(
+                        icon: Icon(
+                          FontAwesomeIcons.bell,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                        label: Text("Admin",
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontFamily: "OpenSans",
+                              color: Colors.white,
+                            ))),
+                  ),
+                )
+              ],
+              title: Container(
+                  padding: EdgeInsets.only(left: 50.0, top: 15),
+                  child: Row(
+                    children: [
+                      Text("Connected Patient Hub",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: "OpenSans",
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 60),
+                        child: Icon(FontAwesomeIcons.globe),
+                      )
+                    ],
+                  ))),
+        ),
       body: Container(
         color: Color(0xffececec),
         child: Row(
@@ -33,7 +93,9 @@ class _PatientHomeState extends State<PatientHome> {
                   children: [
                     SizedBox(height: 100.0),
                     FlatButton(
-                      onPressed: () {},
+                        onPressed: () {
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => Blank()), );
+                        },
                       child: Column(
                         children: [
                           Icon(Icons.dashboard_outlined),
@@ -43,7 +105,9 @@ class _PatientHomeState extends State<PatientHome> {
                     ),
                     SizedBox(height: 30.0),
                     FlatButton(
-                      onPressed: () {},
+                        onPressed: () {
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => Blank()), );
+                        },
                       child: Column(
                         children: [
                           Icon(FontAwesomeIcons.user),
@@ -54,7 +118,9 @@ class _PatientHomeState extends State<PatientHome> {
                     ),
                     SizedBox(height: 30.0),
                     FlatButton(
-                      onPressed: () {},
+                        onPressed: () {
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => Blank()), );
+                        },
                       child: Column(
                         children: [
                           Icon(Icons.copy),
@@ -65,7 +131,9 @@ class _PatientHomeState extends State<PatientHome> {
                     ),
                     SizedBox(height: 30.0),
                     FlatButton(
-                      onPressed: () {},
+                        onPressed: () {
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => Blank()), );
+                        },
                       child: Column(
                         children: [
                           Icon(Icons.devices),
@@ -76,7 +144,9 @@ class _PatientHomeState extends State<PatientHome> {
                     ),
                     SizedBox(height: 30.0),
                     FlatButton(
-                      onPressed: () {},
+                        onPressed: () {
+                          Navigator.push( context, MaterialPageRoute(builder: (context) => Blank()), );
+                        },
                       child: Column(
                         children: [
                           Icon(Icons.business),
@@ -153,7 +223,8 @@ class _PatientHomeState extends State<PatientHome> {
                                       SizedBox(height:20),
                                       Groups(),
                                       SizedBox(height:20),
-                                      ActionItems()
+                                      ActionItems(),
+                                      SizedBox(height:20)
                                     ]
                                   )
                                 ),
@@ -173,4 +244,11 @@ class _PatientHomeState extends State<PatientHome> {
     );
   }
 }
+class Blank extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
+
 
